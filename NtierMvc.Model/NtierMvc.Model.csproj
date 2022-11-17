@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F0B4633B-0113-412A-A757-9D6DDA91E199}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NtierMvc.Model</RootNamespace>
+    <AssemblyName>NtierMvc.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\ActiveSession.cs" />
+    <Compile Include="Account\LoginEntity.cs" />
+    <Compile Include="Account\SessionLoginEntity.cs" />
+    <Compile Include="Admin\ChangePswdEntity.cs" />
+    <Compile Include="Admin\RoleAssignEntity.cs" />
+    <Compile Include="Admin\InspectionRegistrations.cs" />
+    <Compile Include="Application\AccreditationRankingEntity.cs" />
+    <Compile Include="Application\AgencyProfileEntity.cs" />
+    <Compile Include="Application\ApplicationComplStatusEntity.cs" />
+    <Compile Include="Application\AuthorizedRepresentative.cs" />
+    <Compile Include="Application\DashBoardChartEntity.cs" />
+    <Compile Include="Application\PaymentGatewayResponse.cs" />
+    <Compile Include="Application\PermanantAffiliationEntity.cs" />
+    <Compile Include="Application\CommonDetailsEntity.cs" />
+    <Compile Include="Application\TrusteeEntity.cs" />
+    <Compile Include="Application\UploadDocumentEntity.cs" />
+    <Compile Include="Application\UserGrievanceEntity.cs" />
+    <Compile Include="Base\AddDdlEntity.cs" />
+    <Compile Include="BulkUploadEntity.cs" />
+    <Compile Include="PLEntity.cs" />
+    <Compile Include="ContractReview.cs" />
+    <Compile Include="Common\InsertTableData.cs" />
+    <Compile Include="DescEntity.cs" />
+    <Compile Include="HR\HRCertificatesEntity.cs" />
+    <Compile Include="Vendor\VendorEntity.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="BillMonitoringEntity.cs" />
+    <Compile Include="GateEntryEntity.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="ClarificationEntity.cs" />
+    <Compile Include="DesignEng\BOMEntity.cs" />
+    <Compile Include="DesignEng\ProductRealisationEntity.cs" />
+    <Compile Include="HR\HRExperienceEntity.cs" />
+    <Compile Include="MRM\MRMBillMonitoringEntity.cs" />
+    <Compile Include="MRM\PODetailEntity.cs" />
+    <Compile Include="MRM\PRDetailEntity.cs" />
+    <Compile Include="SingleColumnEntity.cs" />
+    <Compile Include="HR\HRLeaveManagementEntity.cs" />
+    <Compile Include="HR\HRPayrollEntity.cs" />
+    <Compile Include="HR\HREmployeeEntity.cs" />
+    <Compile Include="OrderEntity.cs" />
+    <Compile Include="ProductEntity.cs" />
+    <Compile Include="GeographyEntity.cs" />
+    <Compile Include="QuoteAndPrepVM.cs" />
+    <Compile Include="QuotationPreparationEntity.cs" />
+    <Compile Include="QuotationEntity.cs" />
+    <Compile Include="EnquiryEntity.cs" />
+    <Compile Include="Customer\CustomerEntity.cs" />
+    <Compile Include="EmployeesEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Account\UserEntity.cs" />
+    <Compile Include="Stores\GoodsRecieptEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NtierMvc.Common\NtierMvc.Common.csproj">
+      <Project>{f8bd4c49-aeee-4bc7-8446-fcb4e070d7cb}</Project>
+      <Name>NtierMvc.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
