@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using System.Web.Http.Description;
 using System.Threading.Tasks;
 using System.Threading;
@@ -13,10 +12,11 @@ using NtierMvc.BusinessLogic.Interface;
 using NtierMvc.Model.Account;
 using NtierMvc.BusinessLogic.Worker;
 using NtierMvc.Model;
+using Microsoft.AspNetCore.Mvc;
 
 namespace NtierMvc.API.Controllers.Application
 {
-    public class TechnicalDetailsController : ApiController
+    public class TechnicalDetailsController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
         ITechnicalWorker _repository = new TechnicalWorker();
 
@@ -24,7 +24,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveQuotationDetails")]
-        public IHttpActionResult SaveQuotationDetails(QuotationEntity viewModel)
+        public IActionResult SaveQuotationDetails(QuotationEntity viewModel)
         {
             return Ok(_repository.SaveQuotationDetails(viewModel));
         }
@@ -32,21 +32,21 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveQuotePreparation")]
-        public IHttpActionResult SaveQuotePreparation(QuotationPreparationEntity entity)
+        public IActionResult SaveQuotePreparation(QuotationPreparationEntity entity)
         {
             return Ok(_repository.SaveQuotePreparation(entity));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetUserQuoteDetails")]
-        public IHttpActionResult GetUserQuoteDetails(string unitNo)
+        public IActionResult GetUserQuoteDetails(string unitNo)
         {
             return Ok(_repository.GetUserQuoteDetails(unitNo));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetVendorQuoteDetails")]
-        public IHttpActionResult GetVendorQuoteDetails(string vendorId)
+        public IActionResult GetVendorQuoteDetails(string vendorId)
         {
             return Ok(_repository.GetVendorQuoteDetails(vendorId));
         }
@@ -54,35 +54,35 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [Route("api/TechnicalDetails/DeleteQuotationDetail")]
         [ResponseType(typeof(string))]
-        public IHttpActionResult DeleteQuotationDetail(int[] param)
+        public IActionResult DeleteQuotationDetail(int[] param)
         {
             return Ok(_repository.DeleteQuotationDetail(param[0]));
         }
 
         [ResponseType(typeof(int))]
         [Route("api/TechnicalDetails/GetQuoteRegList")]
-        public IHttpActionResult GetQuoteRegList(int pageIndex, int pageSize, string SearchQuoteType = null, string SearchQuoteCustomerID = null, string SearchSubject = null, string SearchDeliveryTerms = null)
+        public IActionResult GetQuoteRegList(int pageIndex, int pageSize, string SearchQuoteType = null, string SearchQuoteCustomerID = null, string SearchSubject = null, string SearchDeliveryTerms = null)
         {
             return Ok(_repository.GetQuoteRegList(pageIndex, pageSize, SearchQuoteType, SearchQuoteCustomerID, SearchSubject, SearchDeliveryTerms));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetCityName")]
-        public IHttpActionResult GetCityName(string VendorName = "")
+        public IActionResult GetCityName(string VendorName = "")
         {
             return Ok(_repository.GetCityName(VendorName));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetProductLineList")]
-        public IHttpActionResult GetProductLineList(string productLine = "")
+        public IActionResult GetProductLineList(string productLine = "")
         {
             return Ok(_repository.GetProductLineList(productLine));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetProductNumber")]
-        public IHttpActionResult GetProductNumber(string productNameId = "", int productType = 0)
+        public IActionResult GetProductNumber(string productNameId = "", int productType = 0)
         {
             return Ok(_repository.GetProductNumber(productNameId, productType));
         }
@@ -91,7 +91,7 @@ namespace NtierMvc.API.Controllers.Application
         //[HttpPost]
         //[ResponseType(typeof(QuotationEntity))]
         //[Route("api/QuotationDetails/AddQuotationDetailsPopup")]
-        //public IHttpActionResult AddQuotationDetailsPopup(QuotationEntity Model)
+        //public IActionResult AddQuotationDetailsPopup(QuotationEntity Model)
         //{
         //    return Ok(_repository.QuotationDetailsPopup(Model));
         //}
@@ -100,49 +100,49 @@ namespace NtierMvc.API.Controllers.Application
         [ResponseType(typeof(QuotationEntity))]
         [Route("api/TechnicalDetails/AddQuotationDetailsPopup")]
         [Route("api/TechnicalDetails/QuotationDetailsPopup")]
-        public IHttpActionResult QuotationDetailsPopup(QuotationEntity Model)
+        public IActionResult QuotationDetailsPopup(QuotationEntity Model)
         {
             return Ok(_repository.QuotationDetailsPopup(Model));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetEnqNoList")]
-        public IHttpActionResult GetEnqNoList(string vendorId = "")
+        public IActionResult GetEnqNoList(string vendorId = "")
         {
             return Ok(_repository.GetEnqNoList(vendorId));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetQuoteNo")]
-        public IHttpActionResult GetQuoteNo(string quotetypeId = null, string finYear = null)
+        public IActionResult GetQuoteNo(string quotetypeId = null, string finYear = null)
         {
             return Ok(_repository.GetQuoteNo(quotetypeId, finYear));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetQuoteNoList")]
-        public IHttpActionResult GetQuoteNoList(string quotetypeId = "", string SoNo = null)
+        public IActionResult GetQuoteNoList(string quotetypeId = "", string SoNo = null)
         {
             return Ok(_repository.GetQuoteNoList(quotetypeId, SoNo));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetQuoteItemSlNoList")]
-        public IHttpActionResult GetQuoteItemSlNoList(string quotetypeId = "", string SoNo = null)
+        public IActionResult GetQuoteItemSlNoList(string quotetypeId = "", string SoNo = null)
         {
             return Ok(_repository.GetQuoteItemSlNoList(quotetypeId, SoNo));
         }
 
         [HttpPost]
         [Route("api/TechnicalDetails/GetQuoteEnqNoList")]
-        public IHttpActionResult GetQuoteEnqNoList(QuotationEntity qE)
+        public IActionResult GetQuoteEnqNoList(QuotationEntity qE)
         {
             return Ok(_repository.GetQuoteEnqNoList(qE));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetPrepProductNames")]
-        public IHttpActionResult GetPrepProductNames(string productId, string casingSize, string type = null)
+        public IActionResult GetPrepProductNames(string productId, string casingSize, string type = null)
         {
             return Ok(_repository.GetPrepProductNames(productId, casingSize, type));
         }
@@ -150,21 +150,21 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveOrderDetail")]
-        public IHttpActionResult SaveOrderDetail(OrderEntity oEntity)
+        public IActionResult SaveOrderDetail(OrderEntity oEntity)
         {
             return Ok(_repository.SaveOrderDetail(oEntity));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetUserOrderDetails")]
-        public IHttpActionResult GetUserOrderDetails(string unitNo)
+        public IActionResult GetUserOrderDetails(string unitNo)
         {
             return Ok(_repository.GetUserOrderDetails(unitNo));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetVendorOrderDetails")]
-        public IHttpActionResult GetVendorOrderDetails(string vendorId)
+        public IActionResult GetVendorOrderDetails(string vendorId)
         {
             return Ok(_repository.GetVendorOrderDetails(vendorId));
         }
@@ -172,14 +172,14 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [Route("api/TechnicalDetails/DeleteOrderDetail")]
         [ResponseType(typeof(string))]
-        public IHttpActionResult DeleteOrderDetail(int[] param)
+        public IActionResult DeleteOrderDetail(int[] param)
         {
             return Ok(_repository.DeleteOrderDetail(param[0]));
         }
 
         [ResponseType(typeof(int))]
         [Route("api/TechnicalDetails/GetOrderDetails")]
-        public IHttpActionResult GetOrderDetails(int pageIndex, int pageSize, string SearchQuoteType = null, string SearchCustomerID = null, string SearchProductGroup = null, string SearchDeliveryTerms = null, string SearchPODeliveryDate = null)
+        public IActionResult GetOrderDetails(int pageIndex, int pageSize, string SearchQuoteType = null, string SearchCustomerID = null, string SearchProductGroup = null, string SearchDeliveryTerms = null, string SearchPODeliveryDate = null)
         {
             return Ok(_repository.GetOrderDetails(pageIndex, pageSize, SearchQuoteType, SearchCustomerID, SearchProductGroup, SearchDeliveryTerms, SearchPODeliveryDate));
         }
@@ -189,7 +189,7 @@ namespace NtierMvc.API.Controllers.Application
         [ResponseType(typeof(OrderEntity))]
         [Route("api/TechnicalDetails/AddOrderDetailsPopup")]
         [Route("api/TechnicalDetails/OrderDetailsPopup")]
-        public IHttpActionResult OrderDetailsPopup(OrderEntity Model)
+        public IActionResult OrderDetailsPopup(OrderEntity Model)
         {
             return Ok(_repository.OrderDetailsPopup(Model));
         }
@@ -197,21 +197,21 @@ namespace NtierMvc.API.Controllers.Application
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetOrderQuoteDetails")]
-        public IHttpActionResult GetOrderQuoteDetails(string quoteType, string quoteNoId)
+        public IActionResult GetOrderQuoteDetails(string quoteType, string quoteNoId)
         {
             return Ok(_repository.GetOrderQuoteDetails(quoteType, quoteNoId));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetQuoteOrderDetails")]
-        public IHttpActionResult GetQuoteOrderDetails(string quoteType, string quoteNoId)
+        public IActionResult GetQuoteOrderDetails(string quoteType, string quoteNoId)
         {
             return Ok(_repository.GetQuoteOrderDetails(quoteType, quoteNoId));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetOrderDetailsFromSO")]
-        public IHttpActionResult GetOrderDetailsFromSO(string SoNoView)
+        public IActionResult GetOrderDetailsFromSO(string SoNoView)
         {
             return Ok(_repository.GetOrderDetailsFromSO(SoNoView));
         }
@@ -219,7 +219,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveItemDetailList")]
-        public IHttpActionResult SaveItemDetailList(BulkUploadEntity iEntity)
+        public IActionResult SaveItemDetailList(BulkUploadEntity iEntity)
         {
             return Ok(_repository.SaveItemDetailList(iEntity));
         }
@@ -227,7 +227,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveItemDetail")]
-        public IHttpActionResult SaveItemDetail(ItemEntity iEntity)
+        public IActionResult SaveItemDetail(ItemEntity iEntity)
         {
             return Ok(_repository.SaveItemDetail(iEntity));
         }
@@ -235,14 +235,14 @@ namespace NtierMvc.API.Controllers.Application
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetDataForDocument")]
-        public IHttpActionResult GetDataForDocument(string downloadTypeId, string quoteTypeId, string quoteNumberId)
+        public IActionResult GetDataForDocument(string downloadTypeId, string quoteTypeId, string quoteNumberId)
         {
             return Ok(_repository.GetDataForDocument(downloadTypeId, quoteTypeId, quoteNumberId));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetListForDocument")]
-        public IHttpActionResult GetListForDocument(string downloadTypeId, string quoteTypeId, string quoteNumberId)
+        public IActionResult GetListForDocument(string downloadTypeId, string quoteTypeId, string quoteNumberId)
         {
             return Ok(_repository.GetListForDocument(downloadTypeId, quoteTypeId, quoteNumberId));
         }
@@ -250,21 +250,21 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveRevisedQuotationDetails")]
-        public IHttpActionResult SaveRevisedQuotationDetails(QuotationEntity qEntity)
+        public IActionResult SaveRevisedQuotationDetails(QuotationEntity qEntity)
         {
             return Ok(_repository.SaveRevisedQuotationDetails(qEntity));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetVendorDetails")]
-        public IHttpActionResult GetVendorDetails(string quotetypeId)
+        public IActionResult GetVendorDetails(string quotetypeId)
         {
             return Ok(_repository.GetVendorDetails(quotetypeId));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetQuotePrepDetails")]
-        public IHttpActionResult GetQuotePrepDetails(string itemNoId, string quoteType, string quoteNo, string QuotePrepId, string financialYear)
+        public IActionResult GetQuotePrepDetails(string itemNoId, string quoteType, string quoteNo, string QuotePrepId, string financialYear)
         {
             return Ok(_repository.GetQuotePrepDetails(itemNoId, quoteType, quoteNo, QuotePrepId, financialYear));
         }
@@ -272,7 +272,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveClarificationData")]
-        public IHttpActionResult SaveClarificationData(ClarificationEntity cObj)
+        public IActionResult SaveClarificationData(ClarificationEntity cObj)
         {
             return Ok(_repository.SaveClarificationData(cObj));
         }
@@ -280,7 +280,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveOrderClarificationData")]
-        public IHttpActionResult SaveOrderClarificationData(ClarificationEntity cEntity)
+        public IActionResult SaveOrderClarificationData(ClarificationEntity cEntity)
         {
             return Ok(_repository.SaveOrderClarificationData(cEntity));
         }
@@ -288,7 +288,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveQuoteNotes")]
-        public IHttpActionResult SaveQuoteNotes(ClarificationEntity viewModel)
+        public IActionResult SaveQuoteNotes(ClarificationEntity viewModel)
         {
             return Ok(_repository.SaveQuoteNotes(viewModel));
         }
@@ -296,14 +296,14 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [Route("api/TechnicalDetails/DeleteClarificationMails")]
         [ResponseType(typeof(string))]
-        public IHttpActionResult DeleteClarificationMails(string[] param)
+        public IActionResult DeleteClarificationMails(string[] param)
         {
             return Ok(_repository.DeleteClarificationMails(param));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetSoNoDetails")]
-        public IHttpActionResult GetSoNoDetails(string soNo)
+        public IActionResult GetSoNoDetails(string soNo)
         {
             return Ok(_repository.GetSoNoDetails(soNo));
         }
@@ -311,7 +311,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [Route("api/TechnicalDetails/DeleteOrderClarifications")]
         [ResponseType(typeof(string))]
-        public IHttpActionResult DeleteOrderClarifications(string[] param)
+        public IActionResult DeleteOrderClarifications(string[] param)
         {
             return Ok(_repository.DeleteOrderClarifications(param));
         }
@@ -319,7 +319,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveNewDescDetail")]
-        public IHttpActionResult SaveNewDescDetail(DescEntity viewModel)
+        public IActionResult SaveNewDescDetail(DescEntity viewModel)
         {
             return Ok(_repository.SaveNewDescDetail(viewModel));
         }
@@ -327,14 +327,14 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveOrderNote")]
-        public IHttpActionResult SaveOrderNote(OrderEntity viewModel)
+        public IActionResult SaveOrderNote(OrderEntity viewModel)
         {
             return Ok(_repository.SaveOrderNote(viewModel));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/LoadDescDetail")]
-        public IHttpActionResult LoadDescDetail(int skip, int pageSize, string sortColumn, string sortColumnDir, string search)
+        public IActionResult LoadDescDetail(int skip, int pageSize, string sortColumn, string sortColumnDir, string search)
         {
             return Ok(_repository.LoadDescDetail(skip, pageSize, sortColumn, sortColumnDir, search));
         }
@@ -342,7 +342,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveRevisedOrderDetails")]
-        public IHttpActionResult SaveRevisedOrderDetails(OrderEntity oEntity)
+        public IActionResult SaveRevisedOrderDetails(OrderEntity oEntity)
         {
             return Ok(_repository.SaveRevisedOrderDetails(oEntity));
         }
@@ -350,14 +350,14 @@ namespace NtierMvc.API.Controllers.Application
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetItemNosForEnqs")]
-        public IHttpActionResult GetItemNosForEnqs(string EnqNo)
+        public IActionResult GetItemNosForEnqs(string EnqNo)
         {
             return Ok(_repository.GetItemNosForEnqs(EnqNo));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetDataForContractReview")]
-        public IHttpActionResult GetDataForContractReview(string EnqNo, string ItemNo, string type)
+        public IActionResult GetDataForContractReview(string EnqNo, string ItemNo, string type)
         {
             return Ok(_repository.GetDataForContractReview(EnqNo, ItemNo, type));
         }
@@ -365,62 +365,62 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/TechnicalDetails/SaveContractReviewData")]
-        public IHttpActionResult SaveContractReviewData(ContractReview viewModel)
+        public IActionResult SaveContractReviewData(ContractReview viewModel)
         {
             return Ok(_repository.SaveContractReviewData(viewModel));
         }
 
         [HttpGet]
-        public IHttpActionResult GetWorkAuthReport(string SoNo, string FromDate = null, string ToDate = null, string ReportType=null)
+        public IActionResult GetWorkAuthReport(string SoNo, string FromDate = null, string ToDate = null, string ReportType=null)
         {
             return Ok(_repository.GetWorkAuthReport(SoNo, FromDate, ToDate, ReportType));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/LoadMasterPLlist")]
-        public IHttpActionResult LoadMasterPLlist(int skip, int pageSize, string sortColumn, string sortColumnDir, string search)
+        public IActionResult LoadMasterPLlist(int skip, int pageSize, string sortColumn, string sortColumnDir, string search)
         {
             return Ok(_repository.LoadMasterPLlist(skip, pageSize, sortColumn, sortColumnDir, search));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/LoadQuotePrepListDetails")]
-        public IHttpActionResult LoadQuotePrepListDetails(int skip, int pageSize, string sortColumn, string sortColumnDir, string search, string quoteType = null, string quoteNo = null, string itemNo = null, string financialYear = null)
+        public IActionResult LoadQuotePrepListDetails(int skip, int pageSize, string sortColumn, string sortColumnDir, string search, string quoteType = null, string quoteNo = null, string itemNo = null, string financialYear = null)
         {
             return Ok(_repository.LoadQuotePrepListDetails(skip, pageSize, sortColumn, sortColumnDir, search, quoteType, quoteNo, itemNo, financialYear));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/LoadItemWiseOrders")]
-        public IHttpActionResult LoadItemWiseOrders(int skip, int pageSize, string sortColumn, string sortColumnDir, string search)
+        public IActionResult LoadItemWiseOrders(int skip, int pageSize, string sortColumn, string sortColumnDir, string search)
         {
             return Ok(_repository.LoadItemWiseOrders(skip, pageSize, sortColumn, sortColumnDir, search));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetContractReviews")]
-        public IHttpActionResult GetContractReviews(string customerId = null)
+        public IActionResult GetContractReviews(string customerId = null)
         {
             return Ok(_repository.GetContractReviews(customerId));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetQuoteItemSlNos")]
-        public IHttpActionResult GetQuoteItemSlNos(string quoteType, string quoteNo, string finYear)
+        public IActionResult GetQuoteItemSlNos(string quoteType, string quoteNo, string finYear)
         {
             return Ok(_repository.GetQuoteItemSlNos(quoteType, quoteNo, finYear));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetQuoteNoDetailsforRevisedQuote")]
-        public IHttpActionResult GetQuoteNoDetailsforRevisedQuote(string quoteNoId, string quotetypeId, string financialYr)
+        public IActionResult GetQuoteNoDetailsforRevisedQuote(string quoteNoId, string quotetypeId, string financialYr)
         {
             return Ok(_repository.GetQuoteNoDetailsforRevisedQuote(quoteNoId, quotetypeId, financialYr));
         }
 
         [HttpGet]
         [Route("api/TechnicalDetails/GetRevAndOriginalQuotes")]
-        public IHttpActionResult GetRevAndOriginalQuotes(string quotetypeId, string financialYr, string quoteAddOn = null)
+        public IActionResult GetRevAndOriginalQuotes(string quotetypeId, string financialYr, string quoteAddOn = null)
         {
             return Ok(_repository.GetRevAndOriginalQuotes(quotetypeId, financialYr, quoteAddOn));
         }

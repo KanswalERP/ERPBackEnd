@@ -2,8 +2,8 @@
 using System.Data;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using System.Web.Http.Description;
+using Microsoft.AspNetCore.Mvc;
 using NtierMvc.BusinessLogic.Interface;
 using NtierMvc.BusinessLogic.Worker;
 using NtierMvc.Model;
@@ -11,18 +11,18 @@ using NtierMvc.Model.DesignEng;
 
 namespace NtierMvc.API.Controllers.Application
 {
-    public class DesignDetailsController : ApiController
+    public class DesignDetailsController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
         IDesignWorker _repository = new DesignWorker();
 
         [Route("api/DesignDetails/GetProductRealisationDetails")]
-        public IHttpActionResult GetProductRealisationDetails(int pageIndex, int pageSize, string SearchTypeId = null, string SearchQuoteNo = null, string SearchSONo = null, string SearchVendorId = null, string SearchVendorName = null, string SearchProductGroup = null)
+        public IActionResult GetProductRealisationDetails(int pageIndex, int pageSize, string SearchTypeId = null, string SearchQuoteNo = null, string SearchSONo = null, string SearchVendorId = null, string SearchVendorName = null, string SearchProductGroup = null)
         {
             return Ok(_repository.GetProductRealisationDetails(pageIndex, pageSize, SearchTypeId, SearchQuoteNo, SearchSONo, SearchVendorId, SearchVendorName, SearchProductGroup));
         }
 
         [Route("api/DesignDetails/GetBOMList")]
-        public IHttpActionResult GetBOMList(string ProductName = null, string ProductCode = null, string PL = null, string ProductNo = null, string CasingSize = null, string CasingPPF = null, string Grade = null, string OpenHoleSize = null)
+        public IActionResult GetBOMList(string ProductName = null, string ProductCode = null, string PL = null, string ProductNo = null, string CasingSize = null, string CasingPPF = null, string Grade = null, string OpenHoleSize = null)
         {
             return Ok(_repository.GetBOMList(ProductName, ProductCode, PL, ProductNo, CasingSize, CasingPPF, Grade, OpenHoleSize));
         }
@@ -30,7 +30,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(ProductRealisation))]
         [Route("api/DesignDetails/PRPPopup")]
-        public IHttpActionResult PRPPopup(ProductRealisation Model)
+        public IActionResult PRPPopup(ProductRealisation Model)
         {
             return Ok(_repository.PRPPopup(Model));
         }
@@ -38,7 +38,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/DesignDetails/SaveBOMDetails")]
-        public IHttpActionResult SaveBOMDetails(BOMEntity viewModel)
+        public IActionResult SaveBOMDetails(BOMEntity viewModel)
         {
             return Ok(_repository.SaveBOMDetails(viewModel));
         }
@@ -46,7 +46,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/DesignDetails/SaveProductRealisationDetails")]
-        public IHttpActionResult SaveProductRealisationDetails(ProductRealisation viewModel)
+        public IActionResult SaveProductRealisationDetails(ProductRealisation viewModel)
         {
             return Ok(_repository.SaveProductRealisationDetails(viewModel));
         }
@@ -54,7 +54,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/DesignDetails/BillDetailsPopup")]
-        public IHttpActionResult BillDetailsPopup(BillMonitoringEntity viewModel)
+        public IActionResult BillDetailsPopup(BillMonitoringEntity viewModel)
         {
             return Ok(_repository.BillDetailsPopup(viewModel));
         }
@@ -62,13 +62,13 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/DesignDetails/SaveBillMonitoringDetails")]
-        public IHttpActionResult SaveBillMonitoringDetails(BillMonitoringEntity viewModel)
+        public IActionResult SaveBillMonitoringDetails(BillMonitoringEntity viewModel)
         {
             return Ok(_repository.SaveBillMonitoringDetails(viewModel));
         }
 
         [Route("api/DesignDetails/GetPoSLNoDetails")]
-        public IHttpActionResult GetPoSLNoDetails(string POSlNo = null)
+        public IActionResult GetPoSLNoDetails(string POSlNo = null)
         {
             return Ok(_repository.GetPoSLNoDetails(POSlNo));
         }
@@ -76,21 +76,21 @@ namespace NtierMvc.API.Controllers.Application
         [HttpGet]
         [ResponseType(typeof(DataTable))]
         [Route("api/DesignDetails/GetDataTablePRPData")]
-        public IHttpActionResult GetDataTablePRPData(string ReportType, string DateFrom, string DateTo, string VendorId = null, string SoNo = null)
+        public IActionResult GetDataTablePRPData(string ReportType, string DateFrom, string DateTo, string VendorId = null, string SoNo = null)
         {
             return Ok(_repository.GetDataTablePRPData(ReportType, DateFrom, DateTo, VendorId, SoNo));
         }
 
         [HttpGet]
         [Route("api/DesignDetails/GetVendorIdFromQuoteType")]
-        public IHttpActionResult GetVendorIdFromQuoteType(string ReportType=null)
+        public IActionResult GetVendorIdFromQuoteType(string ReportType=null)
         {
             return Ok(_repository.GetVendorIdFromQuoteType(ReportType=null));
         }
 
         [HttpGet]
         [Route("api/DesignDetails/GetQuoteOrderDetailsForPRP")]
-        public IHttpActionResult GetQuoteOrderDetailsForPRP(string quoteType, string quoteNoId)
+        public IActionResult GetQuoteOrderDetailsForPRP(string quoteType, string quoteNoId)
         {
             return Ok(_repository.GetQuoteOrderDetailsForPRP(quoteType, quoteNoId));
         }

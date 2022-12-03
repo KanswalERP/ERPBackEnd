@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using System.Web.Http.Description;
 using System.Threading.Tasks;
 using System.Threading;
@@ -13,10 +12,11 @@ using NtierMvc.BusinessLogic.Interface;
 using NtierMvc.Model.Account;
 using NtierMvc.BusinessLogic.Worker;
 using NtierMvc.Model;
+using Microsoft.AspNetCore.Mvc;
 
 namespace NtierMvc.API.Controllers.Application
 {
-    public class EnquiryDetailsController : ApiController
+    public class EnquiryDetailsController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
         IEnquiryWorker _repository = new EnquiryWorker();
 
@@ -24,14 +24,14 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/EnquiryDetails/SaveEnquiryDetails")]
-        public IHttpActionResult SaveEnquiryDetails(EnquiryEntity viewModel)
+        public IActionResult SaveEnquiryDetails(EnquiryEntity viewModel)
         {
             return Ok(_repository.SaveEnquiryDetails(viewModel));
         }
 
         [HttpGet]
         [Route("api/EnquiryDetails/GetUserDetails")]
-        public IHttpActionResult GetUserDetails(string unitNo)
+        public IActionResult GetUserDetails(string unitNo)
         {
             return Ok(_repository.GetUserCustDetails(unitNo));
         }
@@ -39,21 +39,21 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [Route("api/EnquiryDetails/DeleteEnquiryDetail")]
         [ResponseType(typeof(string))]
-        public IHttpActionResult DeleteEnquiryDetail(int[] param)
+        public IActionResult DeleteEnquiryDetail(int[] param)
         {
             return Ok(_repository.DeleteEnquiryDetail(param[0]));
         }
 
         [ResponseType(typeof(int))]
         [Route("api/EnquiryDetails/GetEnquiryDetails")]
-        public IHttpActionResult GetEnquiryDetails(int pageIndex, int pageSize, string SearchEQEnqType, string SearchCustomerName = null, string SearchEnqFor = null, string SearchEQDueDate = null, string SearchEOQ = null)
+        public IActionResult GetEnquiryDetails(int pageIndex, int pageSize, string SearchEQEnqType, string SearchCustomerName = null, string SearchEnqFor = null, string SearchEQDueDate = null, string SearchEOQ = null)
         {
             return Ok(_repository.GetEnquiryDetails(pageIndex, pageSize, SearchEQEnqType, SearchCustomerName, SearchEnqFor, SearchEQDueDate, SearchEOQ));
         }
 
         [HttpGet]
         [Route("api/EnquiryDetails/GetCityName")]
-        public IHttpActionResult GetCityName(string VendorName = "")
+        public IActionResult GetCityName(string VendorName = "")
         {
             return Ok(_repository.GetCityName(VendorName));
         }
@@ -62,7 +62,7 @@ namespace NtierMvc.API.Controllers.Application
         //[HttpPost]
         //[ResponseType(typeof(EnquiryEntity))]
         //[Route("api/EnquiryDetails/AddEnquiryDetailsPopup")]
-        //public IHttpActionResult AddEnquiryDetailsPopup(EnquiryEntity Model)
+        //public IActionResult AddEnquiryDetailsPopup(EnquiryEntity Model)
         //{
         //    return Ok(_repository.EnquiryDetailsPopup(Model));
         //}
@@ -71,21 +71,21 @@ namespace NtierMvc.API.Controllers.Application
         [ResponseType(typeof(EnquiryEntity))]
         [Route("api/EnquiryDetails/AddEnquiryDetailsPopup")]
         [Route("api/EnquiryDetails/EnquiryDetailsPopup")]
-        public IHttpActionResult EnquiryDetailsPopup(EnquiryEntity Model)
+        public IActionResult EnquiryDetailsPopup(EnquiryEntity Model)
         {
             return Ok(_repository.EnquiryDetailsPopup(Model));
         }
 
         [HttpGet]
         [Route("api/EnquiryDetails/GetVendorDetailForEnquiry")]
-        public IHttpActionResult GetVendorDetailForEnquiry(string CustomerId)
+        public IActionResult GetVendorDetailForEnquiry(string CustomerId)
         {
             return Ok(_repository.GetVendorDetailForEnquiry(CustomerId));
         }
 
         [HttpGet]
         [Route("api/EnquiryDetails/GetDdlValueForEnquiry")]
-        public IHttpActionResult GetDdlValueForEnquiry(string type, string EnqType = null, string CustomerId = null, string EnqFor = null, string DueDate = null)
+        public IActionResult GetDdlValueForEnquiry(string type, string EnqType = null, string CustomerId = null, string EnqFor = null, string DueDate = null)
         {
             return Ok(_repository.GetDdlValueForEnquiry(type, EnqType, CustomerId, EnqFor, DueDate));
         }
