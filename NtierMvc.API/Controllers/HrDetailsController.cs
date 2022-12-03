@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using System.Web.Http.Description;
+using Microsoft.AspNetCore.Mvc;
 using NtierMvc.BusinessLogic.Interface;
 using NtierMvc.BusinessLogic.Worker;
 using NtierMvc.Model;
@@ -10,7 +10,7 @@ using NtierMvc.Model.HR;
 
 namespace NtierMvc.API.Controllers.Application
 {
-    public class HrDetailsController : ApiController
+    public class HrDetailsController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
         IHrWorker _repository = new HrWorker();
 
@@ -18,7 +18,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/HrDetails/SaveEmployeeDetails")]
-        public IHttpActionResult SaveEmployeeDetails(EmployeeEntity viewModel)
+        public IActionResult SaveEmployeeDetails(EmployeeEntity viewModel)
         {
             return Ok(_repository.SaveEmployeeDetails(viewModel));
         }
@@ -26,7 +26,7 @@ namespace NtierMvc.API.Controllers.Application
 
         [HttpGet]
         [Route("api/HrDetails/GetUserDetails")]
-        public IHttpActionResult GetUserDetails(string unitNo)
+        public IActionResult GetUserDetails(string unitNo)
         {
             return Ok(_repository.GetUserEmployeeDetails(unitNo));
         }
@@ -34,13 +34,13 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(EmployeeEntity))]
         [Route("api/HrDetails/EmployeeDetailsPopup")]
-        public IHttpActionResult EmployeeDetailsPopup(EmployeeEntity Model)
+        public IActionResult EmployeeDetailsPopup(EmployeeEntity Model)
         {
             return Ok(_repository.EmployeeDetailsPopup(Model));
         }
 
         [Route("api/HrDetails/GetEmployeeDetails")]
-        public IHttpActionResult GetEmployeeDetails(int pageIndex, int pageSize, string SearchEmployeeNameId = null, string SearchDesignation = null, string SearchDepartment = null, string SearchEmpStatus = null)
+        public IActionResult GetEmployeeDetails(int pageIndex, int pageSize, string SearchEmployeeNameId = null, string SearchDesignation = null, string SearchDepartment = null, string SearchEmpStatus = null)
         {
             return Ok(_repository.GetEmployeeDetails(pageIndex, pageSize, SearchEmployeeNameId, SearchDesignation, SearchDepartment, SearchEmpStatus));
         }
@@ -48,7 +48,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [Route("api/HrDetails/DeleteEmpDetail")]
         [ResponseType(typeof(string))]
-        public IHttpActionResult DeleteEmpDetail(int[] param)
+        public IActionResult DeleteEmpDetail(int[] param)
         {
             return Ok(_repository.DeleteEmployeeDetail(param[0]));
         }
@@ -56,7 +56,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/HrDetails/SavePayrollDetails")]
-        public IHttpActionResult SavePayrollDetails(PayrollEntity payModel)
+        public IActionResult SavePayrollDetails(PayrollEntity payModel)
         {
             return Ok(_repository.SavePayrollDetails(payModel));
         }
@@ -64,7 +64,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(PayrollEntity))]
         [Route("api/HrDetails/GetEmpPayrollData")]
-        public IHttpActionResult GetEmpPayrollData(int[] param)
+        public IActionResult GetEmpPayrollData(int[] param)
         {
             return Ok(_repository.GetEmpPayrollData(param[0],param[1],param[2]));
         }
@@ -72,14 +72,14 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/HrDetails/SaveEmpLeaveDetails")]
-        public IHttpActionResult SaveEmpLeaveDetails(LeaveManagement lvModel)
+        public IActionResult SaveEmpLeaveDetails(LeaveManagement lvModel)
         {
             return Ok(_repository.SaveEmpLeaveDetails(lvModel));
         }
 
 
         [Route("api/HrDetails/GetEmpLeaveList")]
-        public IHttpActionResult GetEmpLeaveList(int EmpId)
+        public IActionResult GetEmpLeaveList(int EmpId)
         {
             return Ok(_repository.GetEmpLeaveList(EmpId));
         }
@@ -87,14 +87,14 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/HrDetails/SaveExperienceDetailsList")]
-        public IHttpActionResult SaveExperienceDetailsList(BulkUploadEntity iEntity)
+        public IActionResult SaveExperienceDetailsList(BulkUploadEntity iEntity)
         {
             return Ok(_repository.SaveExperienceDetailsList(iEntity));
         }
 
         [HttpGet]
         [Route("api/HrDetails/HRCertificates")]
-        public IHttpActionResult HRCertificates(int EmpId)
+        public IActionResult HRCertificates(int EmpId)
         {
             return Ok(_repository.HRCertificates(EmpId));
         }
@@ -102,7 +102,7 @@ namespace NtierMvc.API.Controllers.Application
         [HttpPost]
         [ResponseType(typeof(string))]
         [Route("api/HrDetails/SaveEmpCertificates")]
-        public IHttpActionResult SaveEmpCertificates(HRCertificatesEntity viewModel)
+        public IActionResult SaveEmpCertificates(HRCertificatesEntity viewModel)
         {
             return Ok(_repository.SaveEmpCertificates(viewModel));
         }

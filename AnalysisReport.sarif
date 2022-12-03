@@ -1,0 +1,1518 @@
+﻿{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "Dependency Analysis",
+          "semanticVersion": "0.4.355802",
+          "informationUri": "https://docs.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview",
+          "rules": [
+            {
+              "id": "UA103",
+              "name": "ReferenceToBeDeleted",
+              "fullDescription": {
+                "text": "References that need to be deleted in order to upgrade the project to chosen TFM"
+              },
+              "helpUri": "https://docs.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview"
+            },
+            {
+              "id": "UA106",
+              "name": "PackageToBeAdded",
+              "fullDescription": {
+                "text": "Packages that need to be added in order to upgrade the project to chosen TFM"
+              },
+              "helpUri": "https://docs.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview"
+            },
+            {
+              "id": "UA108",
+              "name": "FrameworkReferenceToBeAdded",
+              "fullDescription": {
+                "text": "Framework Reference that need to be added in order to upgrade the project to chosen TFM"
+              },
+              "helpUri": "https://docs.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview"
+            },
+            {
+              "id": "UA105",
+              "name": "PackageToBeDeleted",
+              "fullDescription": {
+                "text": "Packages that need to be deleted in order to upgrade the project to chosen TFM"
+              },
+              "helpUri": "https://docs.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.configuration needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/NtierMvc.Common.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/NtierMvc.Common.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package System.Configuration.ConfigurationManager, Version=5.0.0 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/NtierMvc.Common.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.355802 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/NtierMvc.Common.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.Windows.Compatibility, Version=7.0.0 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/NtierMvc.Common.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA108",
+          "message": {
+            "text": "Framework Reference to Microsoft.AspNetCore.App needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/NtierMvc.Common.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Model/NtierMvc.Model.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.355802 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Model/NtierMvc.Model.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA108",
+          "message": {
+            "text": "Framework Reference to Microsoft.AspNetCore.App needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Model/NtierMvc.Model.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.configuration needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.DataAccess/NtierMvc.DataAccess.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Net.Http.WebRequest needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.DataAccess/NtierMvc.DataAccess.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Hyak.Common, Version=1.2.2 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.DataAccess/NtierMvc.DataAccess.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package System.Configuration.ConfigurationManager, Version=5.0.0 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.DataAccess/NtierMvc.DataAccess.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package System.Net.Http, Version=4.3.4 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.DataAccess/NtierMvc.DataAccess.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.355802 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.DataAccess/NtierMvc.DataAccess.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.configuration needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/NtierMvc.BusinessLogic.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Net.Http.WebRequest needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/NtierMvc.BusinessLogic.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/NtierMvc.BusinessLogic.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package System.Configuration.ConfigurationManager, Version=5.0.0 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/NtierMvc.BusinessLogic.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package System.Net.Http, Version=4.3.4 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/NtierMvc.BusinessLogic.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.355802 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/NtierMvc.BusinessLogic.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA108",
+          "message": {
+            "text": "Framework Reference to Microsoft.AspNetCore.App needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/NtierMvc.BusinessLogic.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Net.Http.WebRequest needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.Entity needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.ApplicationServices needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.Abstractions needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.Routing needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Configuration needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.Helpers needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.Mvc needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.Optimization needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.Razor needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.WebPages needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.WebPages.Deployment needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA103",
+          "message": {
+            "text": "Reference to System.Web.WebPages.Razor needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Antlr, Version=3.5.0.2 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.AspNet.Mvc, Version=5.2.4 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.AspNet.Razor, Version=3.2.4 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.AspNet.Web.Optimization, Version=1.1.3 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.AspNet.WebApi.Core, Version=5.2.4 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.AspNet.WebApi.WebHost, Version=5.2.4 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.AspNet.WebPages, Version=3.2.4 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.0 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.Web.Infrastructure, Version=1.0.0.0 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package WebGrease, Version=1.6.0 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package System.Net.Http, Version=2.0.20126.16343 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Microsoft.AspNet.WebApi.Client, Version=5.2.4 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA105",
+          "message": {
+            "text": "Package Newtonsoft.Json, Version=12.0.1 needs to be deleted."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Antlr4, Version=4.6.6 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package System.Net.Http, Version=4.3.4 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package System.Configuration.ConfigurationManager, Version=5.0.0 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.AspNet.Razor, Version=3.2.9 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.Web.Infrastructure, Version=2.0.0 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package System.Net.Http, Version=2.0.20710 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.355802 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA108",
+          "message": {
+            "text": "Framework Reference to Microsoft.AspNetCore.App needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/NtierMvc.API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.4.355802 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/API/API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA106",
+          "message": {
+            "text": "Package Microsoft.AspNetCore.Mvc.NewtonsoftJson, Version=7.0.0 needs to be added."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/API/API.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits"
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "API Upgradability",
+          "semanticVersion": "0.4.355802",
+          "informationUri": "https://docs.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview",
+          "rules": [
+            {
+              "id": "UA0005",
+              "name": "Do not use HttpContext.Current",
+              "fullDescription": {
+                "text": "Do not use HttpContext.Current"
+              },
+              "helpUri": "about:blank"
+            },
+            {
+              "id": "UA0002",
+              "name": "Types should be upgraded",
+              "fullDescription": {
+                "text": "Types should be upgraded"
+              },
+              "helpUri": "about:blank"
+            },
+            {
+              "id": "UA0013_C",
+              "name": "Replace usage of System.Web.Optimization.BundleCollection",
+              "fullDescription": {
+                "text": "Replace usage of System.Web.Optimization.BundleCollection"
+              },
+              "helpUri": "about:blank"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "UA0005",
+          "message": {
+            "text": "HttpContext does not have a Current property; get the context from a controller or use HttpContextAccessor instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/Helper.cs"
+                },
+                "region": {
+                  "startLine": 16
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0005",
+          "message": {
+            "text": "HttpContext does not have a Current property; get the context from a controller or use HttpContextAccessor instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/Helper.cs"
+                },
+                "region": {
+                  "startLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0005",
+          "message": {
+            "text": "HttpContext does not have a Current property; get the context from a controller or use HttpContextAccessor instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/Worker/BaseWorker.cs"
+                },
+                "region": {
+                  "startLine": 441
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0005",
+          "message": {
+            "text": "HttpContext does not have a Current property; get the context from a controller or use HttpContextAccessor instead"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.BusinessLogic/Worker/AccountWorker.cs"
+                },
+                "region": {
+                  "startLine": 379
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/Account/LoginController.cs"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'Controller' should be replaced with 'Microsoft.AspNetCore.Mvc.Controller'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Areas/HelpPage/Controllers/HelpController.cs"
+                },
+                "region": {
+                  "startLine": 12
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Areas/HelpPage/Controllers/HelpController.cs"
+                },
+                "region": {
+                  "startLine": 28
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Areas/HelpPage/Controllers/HelpController.cs"
+                },
+                "region": {
+                  "startLine": 34
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ActionResult' should be replaced with 'Microsoft.AspNetCore.Mvc.ActionResult'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Areas/HelpPage/Controllers/HelpController.cs"
+                },
+                "region": {
+                  "startLine": 48
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/AdminDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 15
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/StoresDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 20
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/GateEntryDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/DesignDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 14
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/HrDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/MRMDetailController.cs"
+                },
+                "region": {
+                  "startLine": 13
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/EnquiryDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/CustomerDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/TechnicalDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/RegistrationController.cs"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/ValuesController.cs"
+                },
+                "region": {
+                  "startLine": 10
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/QuotationDetailsController.cs"
+                },
+                "region": {
+                  "startLine": 19
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0002",
+          "message": {
+            "text": "Type 'ApiController' should be replaced with 'Microsoft.AspNetCore.Mvc.ControllerBase'"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/Controllers/BaseController.cs"
+                },
+                "region": {
+                  "startLine": 18
+                }
+              }
+            }
+          ]
+        },
+        {
+          "ruleId": "UA0013_C",
+          "message": {
+            "text": "Script and style bundling works differently in ASP.NET Core. BundleCollection should be replaced by alternative bundling technologies. https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.API/App_Start/BundleConfig.cs"
+                },
+                "region": {
+                  "startLine": 9
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits"
+    },
+    {
+      "tool": {
+        "driver": {
+          "name": "Component Analysis",
+          "semanticVersion": "0.4.355802",
+          "informationUri": "https://docs.microsoft.com/en-us/dotnet/core/porting/upgrade-assistant-overview",
+          "rules": [
+            {
+              "id": "UA209",
+              "name": "Microsoft.DotNet.UpgradeAssistant.Extensions.Windows.WinformsDefaultFontUpdater",
+              "fullDescription": {
+                "text": "Default Font API Alert"
+              },
+              "helpUri": "about:blank"
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "UA209",
+          "message": {
+            "text": "Default font in Windows Forms has been changed from Microsoft Sans Serif to Seg Segoe UI, in order to change the default font use the API - Application.SetDefaultFont(Font font). For more details see here - https://devblogs.microsoft.com/dotnet/whats-new-in-windows-forms-in-net-6-0-preview-5/#application-wide-default-font."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///E:/ERP/GitERP/TestNewERP/BackEnd/NtierMvc.Common/NtierMvc.Common.csproj"
+                },
+                "region": {}
+              }
+            }
+          ]
+        }
+      ],
+      "columnKind": "utf16CodeUnits"
+    }
+  ]
+}

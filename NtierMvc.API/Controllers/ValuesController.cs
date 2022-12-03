@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace NtierMvc.API.Controllers
 {
-    public class ValuesController : ApiController
+    public class ValuesController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
         // GET api/values
         public IEnumerable<string> Get()

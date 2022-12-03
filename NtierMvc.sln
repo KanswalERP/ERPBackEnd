@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28729.10
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtierMvc.Common", "NtierMvc.Common\NtierMvc.Common.csproj", "{F8BD4C49-AEEE-4BC7-8446-FCB4E070D7CB}"
 EndProject
@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtierMvc.DataAccess", "Ntie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtierMvc.BusinessLogic", "NtierMvc.BusinessLogic\NtierMvc.BusinessLogic.csproj", "{EBFDE9C8-3790-4BDC-B304-0C3173EAB3B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NtierMvc.API", "NtierMvc.API\NtierMvc.API.csproj", "{938D42B7-AB9C-473D-8091-A1ECABA0029B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NtierMvc.API", "NtierMvc.API\NtierMvc.API.csproj", "{938D42B7-AB9C-473D-8091-A1ECABA0029B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

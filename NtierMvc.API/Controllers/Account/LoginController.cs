@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using NtierMvc.BusinessLogic.Interface;
 using NtierMvc.BusinessLogic.Worker;
 using System.Web.Http.Description;
 using NtierMvc.Model;
 using NtierMvc.Model.Account;
+using Microsoft.AspNetCore.Mvc;
 
 namespace NtierMvc.API.Controllers.Account
 {
-    public class LoginController : ApiController
+    public class LoginController : Microsoft.AspNetCore.Mvc.ControllerBase
     {
         IAccountWorker _repository = new AccountWorker();
 
         [HttpPost]
         [Route("api/Login/CheckUserExists")]
         [ResponseType(typeof(UserEntity))]
-        //public IHttpActionResult CheckUserExists(string username, string objectType, string password)
-        public IHttpActionResult CheckUserExists(UserEntity objUserEntity)
+        //public IActionResult CheckUserExists(string username, string objectType, string password)
+        public IActionResult CheckUserExists(UserEntity objUserEntity)
         {
             return Ok(_repository.CheckUserExists(objUserEntity.UserName, objUserEntity.ObjectType, objUserEntity.Password));
         }
@@ -28,7 +28,7 @@ namespace NtierMvc.API.Controllers.Account
         [HttpPost]
         [Route("api/Login/SaveSessionlogin")]
         [ResponseType(typeof(void))]
-        public IHttpActionResult SaveSessionlogin(SessionLoginEntity objSessionLoginEntity)
+        public IActionResult SaveSessionlogin(SessionLoginEntity objSessionLoginEntity)
         {
             _repository.SaveSessionlogin(objSessionLoginEntity.UserId, objSessionLoginEntity.IPV4, objSessionLoginEntity.IPV6,
                 objSessionLoginEntity.UserAgent, objSessionLoginEntity.SessionId);
@@ -38,7 +38,7 @@ namespace NtierMvc.API.Controllers.Account
         [HttpGet]
         [Route("api/Login/GetUserRoles")]
         [ResponseType(typeof(List<UserRoleEntity>))]
-        public IHttpActionResult GetUserRoles(string username)
+        public IActionResult GetUserRoles(string username)
         {
             return Ok(_repository.GetUserRoles(username));
         }
@@ -46,7 +46,7 @@ namespace NtierMvc.API.Controllers.Account
         [HttpGet]
         [Route("api/Login/GetUserPermissions")]
         [ResponseType(typeof(List<RolePermissionEntity>))]
-        public IHttpActionResult GetUserPermissions(string username)
+        public IActionResult GetUserPermissions(string username)
         {
             return Ok(_repository.GetUserPermissions(username));
         }
@@ -54,7 +54,7 @@ namespace NtierMvc.API.Controllers.Account
         [HttpPost]
         [Route("api/Login/SaveSessionLogout")]
         [ResponseType(typeof(void))]
-        public IHttpActionResult SaveSessionLogout(SessionLoginEntity objSessionLogin)
+        public IActionResult SaveSessionLogout(SessionLoginEntity objSessionLogin)
         {
             _repository.SaveSessionLogout(objSessionLogin.SessionId, objSessionLogin.UserId, objSessionLogin.logout);
             return Ok();
@@ -63,21 +63,21 @@ namespace NtierMvc.API.Controllers.Account
         [HttpGet]
         [Route("api/Login/CheckLoginSession")]
         [ResponseType(typeof(List<ActiveSession>))]
-        public IHttpActionResult CheckLoginSession(string sessionId,int userId)
+        public IActionResult CheckLoginSession(string sessionId,int userId)
         {
             return Ok(_repository.CheckLoginSession(sessionId, userId));
         }
         [HttpPost]
         [Route("api/Login/CheckRegNumber")]
         [ResponseType(typeof(string))]
-        public IHttpActionResult CheckRegNumber(ChangePasswodEntity entity)
+        public IActionResult CheckRegNumber(ChangePasswodEntity entity)
         {
             return Ok(_repository.CheckRegNumber(entity));
         }
         //[HttpPost]
         //[Route("api/Login/ChangePwd")]
         //[ResponseType(typeof(void))]
-        public IHttpActionResult ChangePwd(ChangePasswodEntity entity)
+        public IActionResult ChangePwd(ChangePasswodEntity entity)
         {
             _repository.ChangePwd(entity);
             return Ok();
@@ -86,7 +86,7 @@ namespace NtierMvc.API.Controllers.Account
         [HttpGet]
         [Route("api/Login/GetUserDetailsForChngePwd")]
         [ResponseType(typeof(ChangePasswodEntity))]
-        public IHttpActionResult GetUserDetailsForChngePwd(string userName)
+        public IActionResult GetUserDetailsForChngePwd(string userName)
         {
             return Ok(_repository.GetUserDetailsForChngePwd(userName));
         }
@@ -94,7 +94,7 @@ namespace NtierMvc.API.Controllers.Account
         [HttpPost]
         [Route("api/Login/CheckUserDetails")]
         [ResponseType(typeof(bool))]
-        public IHttpActionResult CheckUserDetails(ChangePasswodEntity entity)
+        public IActionResult CheckUserDetails(ChangePasswodEntity entity)
         {
             return Ok(_repository.CheckUserDetails(entity));
         }
@@ -107,7 +107,7 @@ namespace NtierMvc.API.Controllers.Account
         [HttpGet]
         [Route("api/Login/GetPagewiseAccess")]
         [ResponseType(typeof(PagewiseAccessEntity))]
-        public IHttpActionResult GetPagewiseAccess(int UserId, int RoleId, int RegistrationId, string RequestUrl , string Action )
+        public IActionResult GetPagewiseAccess(int UserId, int RoleId, int RegistrationId, string RequestUrl , string Action )
         {
             PagewiseAccessEntity entity = new PagewiseAccessEntity();
             entity.requestURL = RequestUrl;
@@ -118,12 +118,12 @@ namespace NtierMvc.API.Controllers.Account
             return Ok(_repository.GetPagewiseAccess(entity));
         }
 
-        public IHttpActionResult GetAffliationType(int RegistrationId)
+        public IActionResult GetAffliationType(int RegistrationId)
         {                 
             return Ok(_repository.GetAffiliationType(RegistrationId));
         }
 
-        public IHttpActionResult GetEmployeeDetail(string EmpId)
+        public IActionResult GetEmployeeDetail(string EmpId)
         {
             return Ok(_repository.GetEmployeeDetail(EmpId));
         }
