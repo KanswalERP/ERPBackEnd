@@ -8,6 +8,18 @@
     <OutputPath>bin\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Antlr4 Remove="Areas\HelpPage\**" />
+    <Antlr4 Remove="Views\**" />
+    <Compile Remove="Areas\HelpPage\**" />
+    <Compile Remove="Views\**" />
+    <Content Remove="Areas\HelpPage\**" />
+    <Content Remove="Views\**" />
+    <EmbeddedResource Remove="Areas\HelpPage\**" />
+    <EmbeddedResource Remove="Views\**" />
+    <None Remove="Areas\HelpPage\**" />
+    <None Remove="Views\**" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Update="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -17,6 +29,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\EmailTemplateWeb\" />
+    <Folder Include="Areas\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
